@@ -27,12 +27,14 @@ const newPersoon = new Person({
   age: 25,
   favoriteFoods: ["Pizza", "Burger"]
 })
-newPersoon.save(function (err, data) {
-  if (err) return err;
-  console.log(data);
-});
+
 const createAndSavePerson = (done) => {
-  done(null /*, data*/ );
+  newPersoon.save(function (err, data) {
+    if (err) return done(err);
+    console.log(data);
+    done(null, data);
+  });
+
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
