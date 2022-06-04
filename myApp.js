@@ -17,15 +17,12 @@ const personSchema = new Schema({
     required: true
   },
   age: Number,
-  favouriteFoods: [String],
+  favoriteFoods: [String]
 });
-const Person = mongoose.model('Person', personSchema);
+const Person = mongoose.model("Person", personSchema);
 
-var mon_instance = new Person({
-  name: "Xerox 420",
-  age: 25,
-  favouriteFoods: ["Pizza", "Burger"]
-});
+
+
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/ );
